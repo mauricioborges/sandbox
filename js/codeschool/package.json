@@ -1,0 +1,26 @@
+{
+  "name": "codeschool-js",
+  "version": "0.0.1",
+  "description": "My studies at CodeSchool JS path converted to tests with Jasmine",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mauricioborges/sandbox.git"
+  },
+  "keywords": [
+    "test",
+    "js",
+    "jasmine",
+    "codeschool"
+  ],
+  "author": "Mauricio Borges Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mauricioborges/sandbox/issues"
+  },
+  "devDependencies": {
+    "jasmine": "^2.3.2"
+  }
+}
