@@ -25,4 +25,8 @@ describe("CodeSchool exersise: Functions", function(){
         expect(fear).not.toBeLessThan(100);
         expect(fear).not.toBeGreaterThan(400);
     });
+    it("Displaying Function Contents", function(){
+        var func = function(){return 1}
+        expect(func.toString()).toBe("function (){return 1}");
+    });
 });
