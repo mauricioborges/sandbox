@@ -12,3 +12,16 @@ exports.fearGenerated = function(numPeeps, rainInInches, numSharks) {
   var totalFear = sharkFear + rainFear;
   return totalFear;
 };
+
+exports.fearMessage = function(fear) {
+    var message = "";
+    if (fear < 200) {
+        message += "LOW\nStill wanna ride?";
+    } else if (fear <= 300) {
+        message += "MEDIUM\nThink you'll make it?";
+    } else {
+        return message;
+    }
+    message = "Fear Level: " + message;
+    return message;
+};
