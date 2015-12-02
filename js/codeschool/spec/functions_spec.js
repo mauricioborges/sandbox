@@ -11,7 +11,7 @@ describe("what's the difference between anonymous and non-anonymous functions?",
     });
 });
 
-describe("CodeSchool exersise: Functions", function(){
+describe("CodeSchool exercise: Functions", function(){
     var exercise = require ('../lib/functions.js');
     it("Changing declarations to expressions", function(){
         expect(exercise.runAway).not.toBeNull();
