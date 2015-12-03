@@ -25,3 +25,20 @@ exports.fearMessage = function(fear) {
     message = "Fear Level: " + message;
     return message;
 };
+
+exports.fullNaming = function(namesArray){
+    
+    return namesArray?namesArray.join(" "):"";
+};
+
+exports.adventureSelector = function (userChoice) {
+  switch (userChoice) {
+    case 1:
+      return function(){alert("You selected the Vines of Doom!");};
+    case 2:
+      return function(){alert("Looks like you want the Lake of Despair!");};
+    case 3:
+      return function(){alert("The Caves of Catastrophe!");};
+  }
+}
+

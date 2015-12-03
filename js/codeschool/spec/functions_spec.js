@@ -42,4 +42,18 @@ describe("CodeSchool exercise: Functions", function(){
             });
        }); 
     });
+    describe("Using Map With Arrays", function(){
+        it("should concatenate a name+surname when receiving an array with both",function(){
+            var fullName = exercise.fullNaming;
+            expect(fullName(['Name','Surname'])).toBe("Name Surname");
+        });
+        it("should return empty string when passing null as parameter",function(){
+            expect(exercise.fullNaming()).toBe("");
+        });
+    });
+    describe("why not switching?" , function(){
+        it("should work when using switch without break", function(){
+            expect(exercise.adventureSelector(1).toString()).toBe("function (){alert(\"You selected the Vines of Doom!\");}");
+        });
+    });
 });
