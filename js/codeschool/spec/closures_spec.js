@@ -24,3 +24,14 @@ describe("basicClosure", function(){
         expect(counter.acessor()).toBe(1);
     });
 });
+describe("Highway to the Danger Zones", function(){
+    var exercise = require("../lib/functions.js");
+    it("should display a list of danger zones", function(){
+        var mess=exercise.warningMaker("test");
+        alert=console.log;
+        mess(1,"1");
+        mess(1,"2");
+        fail("this is not a test, where are your assertions?");
+    });
+
+});
