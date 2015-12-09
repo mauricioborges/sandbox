@@ -5,5 +5,5 @@ package my.pomodoro;
  */
 public interface StopWatch {
 
-    Boolean isUp();
+    Boolean runnedOver();
 }

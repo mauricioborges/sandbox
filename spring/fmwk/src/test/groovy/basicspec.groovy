@@ -1,8 +1,4 @@
-import my.pomodoro.Executable
-import my.pomodoro.Pomodoro
-import my.pomodoro.StopWatch
-import my.pomodoro.PomodoroNotStartedException
-import my.pomodoro.Task
+import my.pomodoro.*
 
 import spock.lang.Specification
 
@@ -37,7 +33,7 @@ class PomodoroUsage extends Specification {
         def time = Mock(StopWatch)
         when:
         p.startOn(time)
-        time.isUp() >> true
+        time.runnedOver() >> true
         then:
         p.isOver()
     }
@@ -48,17 +44,50 @@ class PomodoroUsage extends Specification {
         def time = Mock(StopWatch)
         when:
         p.startOn(time)
-        time.isUp() >> false
+        time.runnedOver() >> false
         then:
         !p.isOver()
     }
 
-    def "should also notify if trying to check time lapse for a non running pomodoro"(){
+    def "should notify if trying to check time lapse for a non running pomodoro"(){
         given:
         def p = new Pomodoro(Mock(Executable))
         when:
         p.isOver()
         then:
         thrown(PomodoroNotStartedException)
+    }
+}
+
+class PomodoroStopWatchSpecs extends Specification{
+
+    def "should has a number of minutes to run"(){
+        given:
+        def minutes = 25;
+        def stopWatch = new PomodoroStopWatch()
+        expect:
+        stopWatch.setMinutesToRun(minutes)
+
+    }
+
+    def "should has a clock to watch"(){
+        given:
+        def clock = Mock(Clock)
+        expect:
+        new PomodoroStopWatch(clock)
+    }
+
+    def "this clock should return only what time is it"(){
+        given:"best practices of contract testing"
+        def clock = Mock(Clock)
+        clock.whatTimeIsIt() >> Mock(Date)
+    }
+
+   def "should stop when the time is over"(){
+        given:"todo mock return of clock"
+        def clock = Mock(Clock)
+        def stopWatch = new PomodoroStopWatch(clock)
+        stopWatch.setMinutesToRun()
+
     }
 }
