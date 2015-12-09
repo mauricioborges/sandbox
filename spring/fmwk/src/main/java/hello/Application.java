@@ -3,6 +3,7 @@ package hello;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 
+@Deprecated
 @Configuration
 @ComponentScan
 public class Application {
