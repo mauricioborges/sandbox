@@ -1,5 +1,7 @@
 package my.pomodoro;
 
+import java.util.Date;
+
 public class Pomodoro {
 
     private Boolean running = Boolean.FALSE;
@@ -22,4 +24,5 @@ public class Pomodoro {
     public Boolean stop() {
         return Boolean.TRUE;
     }
+
 }

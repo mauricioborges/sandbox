@@ -1,9 +1,10 @@
-import hello.PomodoroTimer
+import my.pomodoro.Clock
+import my.pomodoro.PomodoroTimer
 import my.pomodoro.Pomodoro
 import spock.lang.Specification
 
-class PomodoroTimerSpec extends Specification{
-    def "should be able to create a Pomodoro cycle"(){
+class PomodoroTimerSpec extends Specification {
+    def "should be able to create a Pomodoro cycle"() {
         given:
         def timer = new PomodoroTimer()
         when:
@@ -12,23 +13,13 @@ class PomodoroTimerSpec extends Specification{
         timer.currentPomodoro().class.is(Pomodoro.class)
     }
 
-    def "should be able to start a Pomodoro"(){
+    def "should be able to start a Pomodoro"() {
         given:
         def timer = new PomodoroTimer()
         when:
         timer.startPomodoro()
         then:
         timer.currentPomodoro().isRunning()
-    }
-
-    def "should notify when time is up"(){
-        given:
-        def timer = new PomodoroTimer()
-        when:
-        timer.startPomodoro()
-        timeIsUp()
-        then:
-        timer.currentPomodoro().isOver()
     }
 
 }
