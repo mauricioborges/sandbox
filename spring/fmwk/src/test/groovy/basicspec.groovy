@@ -49,7 +49,7 @@ class PomodoroUsage extends Specification {
         !p.isOver()
     }
 
-    def "should notify if trying to check time lapse for a non running pomodoro"(){
+    def "should notify if trying to check time lapse for a non running pomodoro"() {
         given:
         def p = new Pomodoro(Mock(Executable))
         when:
@@ -59,9 +59,9 @@ class PomodoroUsage extends Specification {
     }
 }
 
-class PomodoroStopWatchSpecs extends Specification{
+class PomodoroStopWatchSpecs extends Specification {
 
-    def "should has a number of minutes to run"(){
+    def "should has a number of minutes to run"() {
         given:
         def minutes = 25;
         def stopWatch = new PomodoroStopWatch()
@@ -70,24 +70,29 @@ class PomodoroStopWatchSpecs extends Specification{
 
     }
 
-    def "should has a clock to watch"(){
+    def "should has a clock to watch"() {
         given:
         def clock = Mock(Clock)
         expect:
         new PomodoroStopWatch(clock)
     }
 
-    def "this clock should return only what time is it"(){
-        given:"best practices of contract testing"
+    def "this clock should return only what time is it"() {
+        given: "best practices of contract testing"
         def clock = Mock(Clock)
         clock.whatTimeIsIt() >> Mock(Date)
     }
 
-   def "should stop when the time is over"(){
-        given:"todo mock return of clock"
+    def "should stop when time is over"() {
+        given: "todo mock return of clock"
         def clock = Mock(Clock)
         def stopWatch = new PomodoroStopWatch(clock)
-        stopWatch.setMinutesToRun()
-
+        stopWatch.setMinutesToRun(10)
+        when:
+        1 * clock.whatTimeIsIt() >> new Date(1)
+        1 * clock.whatTimeIsIt() >> new Date(1 + 10 * 60 * 1000)
+        then:
+        !stopWatch.runnedOver()
+        stopWatch.runnedOver()
     }
 }

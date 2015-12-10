@@ -6,4 +6,5 @@ package my.pomodoro;
 public interface StopWatch {
 
     Boolean runnedOver();
+
 }
