@@ -14,25 +14,46 @@ public class AlarmSpec extends Specification {
         def alarm = new Alarm(1)
         def dateInMilliseconds = 1
         expect:
-        alarm.setStartTime(dateInMilliseconds)
+        alarm.startCountingAt(dateInMilliseconds)
     }
 
     def "should be able to set a clock to see the time passing"() {
         given:
         def alarm = new Alarm(1)
-        alarm.setStartTime(1)
+        alarm.startCountingAt(1L)
         expect:
         alarm.setClock(Mock(Clock))
     }
+
     def "should be able to see how much time left"() {
         given:
         def alarm = new Alarm(10)
-        alarm.setStartTime(1)
+        alarm.startCountingAt(1L)
         def clock = Mock(Clock)
         when:
         alarm.setClock(clock)
         1 * clock.whatTimeIsIt() >> 100
         then:
-        alarm.timeLeft() == 10*60*1000 - (100 - 1)
+        alarm.timeLeft() == 10 * 60 * 1000 - (100 - 1)
+    }
+
+    def "should not be possible to set an alarm with no clock"() {
+        given:
+        def alarm = new Alarm(10)
+        alarm.startCountingAt(1L)
+        when:
+        alarm.timeLeft()
+        then:
+        thrown(NoAlarmWithoutClockForYouTodayException)
+    }
+
+    def "should not be possible to check time left without starting the alarm"() {
+        given:
+        def alarm = new Alarm(10)
+        alarm.setClock(Mock(Clock))
+        when:
+        alarm.timeLeft()
+        then:
+        thrown(AlarmNotStartedYetException)
     }
 }

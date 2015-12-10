@@ -2,6 +2,6 @@ package hello;
 
 
 @Deprecated
-public interface MessageService{
+public interface MessageService {
     String getMessage();
 }

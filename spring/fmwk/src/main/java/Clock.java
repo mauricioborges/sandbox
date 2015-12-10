@@ -3,5 +3,5 @@
  */
 public interface Clock {
 
-    Integer whatTimeIsIt();
+    Long whatTimeIsIt();
 }
