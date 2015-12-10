@@ -1,3 +1,7 @@
+import pomodoro.domain.Alarm
+import pomodoro.domain.Clock
+import pomodoro.exception.AlarmNotStartedYetException
+import pomodoro.exception.NoAlarmWithoutClockForYouTodayException
 import spock.lang.Specification
 
 public class AlarmSpec extends Specification {

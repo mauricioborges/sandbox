@@ -1,3 +1,8 @@
+package pomodoro.domain;
+
+import pomodoro.exception.AlarmNotStartedYetException;
+import pomodoro.exception.NoAlarmWithoutClockForYouTodayException;
+
 public class Alarm {
 
     private Long minutesToCount = 0L;

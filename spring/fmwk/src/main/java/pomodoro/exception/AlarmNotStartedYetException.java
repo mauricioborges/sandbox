@@ -1,3 +1,5 @@
+package pomodoro.exception;
+
 /**
  * Created by mbsilva on 12/10/15.
  */
