@@ -139,3 +139,32 @@ class HelperMethods extends Specification {
         return words =~ /H.*Worl+/
     }
 }
+
+class TheAndBlock extends Specification {
+    def "should be able to write specifications with more text, to be more verbose"() {
+        given: "that I have a number"
+        def aNumber = 42
+        and: "I have a string with my name"
+        def myName = "MrMe"
+        when: "I concatenate both"
+        def password = myName + aNumber
+        then: "I could have a very weak password to use"
+        password == "MrMe42"
+
+    }
+}
+
+class ExtensionsExamples extends Specification {
+
+    @Timeout(3)
+    def "should be able to put a @Timeout for a feature or fixture method"(){
+        expect:
+            sleep(10000)
+    }
+    @FailsWith(NullPointerException)
+    def "should be able to mark a feature as currently failing with @FailsWith annotation"(){
+        expect:
+            throw new NullPointerException()
+
+    }
+}
