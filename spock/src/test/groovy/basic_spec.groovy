@@ -125,3 +125,17 @@ class Blocks extends Specification {
         c << [4, 9, 11]
     }
 }
+
+class HelperMethods extends Specification {
+
+    def "should be able to use helper methods to improve readability"(){
+        given:
+        def text = "HelloWorld"
+        expect:
+        regexToBeValid(text)
+    }
+
+    def regexToBeValid(words) {
+        return words =~ /H.*Worl+/
+    }
+}
