@@ -39,3 +39,25 @@ class FieldsInSpock extends Specification {
         myConstant == 3
     }
 }
+
+class FixtureSetupMethod extends Specification {
+    def setupCalled = 0
+    def setup() {
+        setupCalled++
+    }
+
+    def "can run a setup() fixture automatically"(){
+        expect:
+        setupCalled == 1
+    }
+    def "should run setup() before each feature method"(){
+        expect:
+        setupCalled == 1
+    }
+    def "should be able to run additional setup steps inside feature method"(){
+        setup:
+        if (setupCalled == 1) setupCalled ++
+        expect:
+        setupCalled == 2
+    }
+}
