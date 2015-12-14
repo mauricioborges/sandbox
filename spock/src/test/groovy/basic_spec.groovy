@@ -42,8 +42,13 @@ class FieldsInSpock extends Specification {
 
 class FixtureSetupMethod extends Specification {
     def setupCalled = 0
+    @Shared setupSpecCalled = 0 // only shared and/or static fields can be used in setupSpec
+
     def setup() {
         setupCalled++
+    }
+    def setupSpec() {
+        setupSpecCalled++
     }
 
     def "can run a setup() fixture automatically"(){
@@ -59,5 +64,33 @@ class FixtureSetupMethod extends Specification {
         if (setupCalled == 1) setupCalled ++
         expect:
         setupCalled == 2
+    }
+    def "should run setupSpec() once in the entire specification"(){
+        expect:
+        setupSpecCalled == 1
+    }
+}
+
+
+class FixtureCleanupMethod extends Specification {
+    
+    @Shared cleanupCalled = false
+    @Shared cleanupSpecCalled = false // only shared and/or static fields can be used in setupSpec
+
+    def "should run a cleanup() fixture method in the end of the method"() {
+        expect:
+        cleanupCalled == false
+        cleanupSpecCalled == false
+        cleanup:
+        cleanupCalled = true
+    }
+    def "should keep status of last change on shared field"() {
+        expect:
+        cleanupCalled == true
+        cleanupSpecCalled == false
+    }
+    def "should never see the cleanupSpec running, as it runs after the last specification method"() {
+        expect:
+        cleanupSpecCalled == false
     }
 }
