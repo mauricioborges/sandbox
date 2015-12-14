@@ -94,3 +94,34 @@ class FixtureCleanupMethod extends Specification {
         cleanupSpecCalled == false
     }
 }
+
+class Blocks extends Specification {
+
+    def "should be able to define setup blocks in a feature method"(){
+        setup:
+        def setupCalled = true
+        expect:
+        setupCalled == true
+    }
+    def "should be able to define given-when-then blocks"(){
+        given:
+        def setupCalled = 0
+        when: "stimulus"
+        setupCalled++
+        then: "response."
+        setupCalled == 1
+    }
+    def "should be able to define given-expect blocks"(){
+        expect: "all methods with return different than void are considered expectations"
+        1 + 1 == 2
+    }
+
+    def "should be able to define multiple examples for a single feature specification"() {
+        expect:
+        a + b == c
+        where:
+        a << [1, 2, 3]
+        b << [3, 7, 8]
+        c << [4, 9, 11]
+    }
+}
