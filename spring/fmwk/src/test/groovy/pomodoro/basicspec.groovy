@@ -1,3 +1,5 @@
+package pomodoro
+
 import pomodoro.domain.Alarm
 import pomodoro.domain.Clock
 import pomodoro.exception.AlarmNotStartedYetException
@@ -28,7 +30,9 @@ public class AlarmSpec extends Specification {
         expect:
         alarm.setClock(Mock(Clock))
     }
+}
 
+class AlarmTimingSpec extends Specification {
     def "should be able to see how much time left"() {
         given:
         def alarm = new Alarm(10)
