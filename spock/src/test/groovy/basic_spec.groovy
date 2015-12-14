@@ -154,12 +154,16 @@ class TheAndBlock extends Specification {
     }
 }
 
+//TODO: study extensions!!!!
+@Title("What a title for this specification")
+@Issue("http://my.issuesystem.com/issue-001")
+@Subject([Specification, Object])
 class ExtensionsExamples extends Specification {
 
     @Timeout(3)
     def "should be able to put a @Timeout for a feature or fixture method"(){
         expect:
-            sleep(10000)
+            sleep(2000)
     }
     @FailsWith(NullPointerException)
     def "should be able to mark a feature as currently failing with @FailsWith annotation"(){
