@@ -1,0 +1,15 @@
+{
+  "name": "protractor-play",
+  "version": "0.0.1",
+  "description": "Some test around protractor with an already available application",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "protractor": "^3.0.0"
+  },
+  "scripts": {
+    "test": "protractor conf.js"
+  },
+  "author": "Mauricio Borges Silva",
+  "license": "MIT"
+}
