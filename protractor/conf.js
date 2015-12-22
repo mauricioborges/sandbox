@@ -1,6 +1,6 @@
 exports.config = {
   framework: 'jasmine',
-  seleniumAddress: 'http://192.168.99.100:32768/wd/hub',
+  seleniumAddress: 'http://' + require('docker-host')().host + ':4444/wd/hub',
   specs: ['specs/*spec.js'],
   multiCapabilities: [{
     browserName: 'firefox'

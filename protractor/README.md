@@ -1,7 +1,7 @@
-not using webdriver-manager. Using remote selenium hub
-
-
-
+not using webdriver-manager. Using remote selenium hub through docker:
+```
+npm run-script docker
+```
 
 Based on http://www.protractortest.org/#/tutorial
 
