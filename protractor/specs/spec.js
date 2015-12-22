@@ -42,4 +42,9 @@ describe('Protractor Demo App', function() {
       add(7, 15);
       expect(history.count()).toEqual(2);
   });
+  it('should history has a text describing the calculus', function() {
+      add(1, 2);
+      add(2, 3);
+      expect(history.last().getText()).toContain('1 + 2');
+  });
 });
