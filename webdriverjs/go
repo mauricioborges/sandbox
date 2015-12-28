@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+
+if [ ! -f "chromedriver" ];then
+    if [ ! -f "chromedriver_mac32.zip"];then
+        curl http://chromedriver.storage.googleapis.com/2.20/chromedriver_mac32.zip > chromedriver_mac32.zip
+    fi
+    unzip chromedriver_mac32.zip
+    rm chromedriver_mac32.zip
+fi
+npm test
