@@ -6,5 +6,10 @@ exports.config = {
     browserName: 'firefox'
   },{
     browserName: 'chrome'
-  }]
+  }],
+  onPrepare: function() {
+     var SpecReporter = require('jasmine-spec-reporter');
+     // add jasmine spec reporter
+     jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'all'}));
+  }
 }
