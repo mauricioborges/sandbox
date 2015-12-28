@@ -4,7 +4,8 @@
   "description": "Me, studying it",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "mocha": "mocha -t 10000 mochatest.js"
   },
   "author": "",
   "license": "ISC",
