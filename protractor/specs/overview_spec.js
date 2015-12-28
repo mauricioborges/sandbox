@@ -26,8 +26,10 @@ describe("Working with Spec and Config files:",function(){
             })
         });
         describe("protractor - a namespace which wraps WebDriver namespace:",function(){
-            it("should be able to access the element function", function(){
+            it("should be able to access different nested objects from protractor", function(){
                 expect(protractor).toEqual(jasmine.any(Object));
+                expect(protractor.By).toEqual(jasmine.any(Object));
+                expect(protractor.Key).toEqual(jasmine.any(Object));
             })
         });
     });
