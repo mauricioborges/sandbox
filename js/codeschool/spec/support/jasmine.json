@@ -4,6 +4,7 @@
     "**/*[sS]pec.js"
   ],
   "helpers": [
+    "support/configure_reporter.js",
     "helpers/**/*.js"
   ]
 }
