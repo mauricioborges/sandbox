@@ -1,0 +1,22 @@
+{
+  "name": "gemstore",
+  "description": "An AngularJS example taken from codeschool",
+  "main": "index.js",
+  "authors": [
+    "Mauricio Borges Silva <mbsilva@thoughtworks.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mauricioborges/sandbox",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "gemstore",
+  "version": "0.0.1",
+  "description": "An AngularJS example taken from codeschool",
+  "main": "index.js",
+  "scripts": {
+    "test": "wuttest",
+    "bower": "bower",
+    "locally": "http-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.1",
+    "http-server": "^0.8.5"
+  }
+}
