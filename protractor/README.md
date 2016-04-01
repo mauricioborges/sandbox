@@ -1,22 +1,20 @@
-not using webdriver-manager. Using remote selenium hub through docker:
+# Getting started
+
+To prepare the environment you must have docker available. Follow instructions to install it and test with:
+
 ```
-npm run-script docker
+docker images
 ```
 
-Based on http://www.protractortest.org/#/tutorial
-
-I preferred using:
+After that, run:
 ```
-npm init
+npm install
 ```
-to create a package.json
-
-also I've installed protractor using:
+to start docker environment, run:
 ```
-npm install protractor --save-dev
+npm run docker
 ```
-to avoid using a global one. Also I run tests using 
+and to run the protractor tests you execute:
 ```
 npm test
 ```
-instead of calling protractor directly
