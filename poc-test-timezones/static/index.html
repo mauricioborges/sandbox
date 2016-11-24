@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+  </head>
+  <body>
+    <div ng-controller="DateCtrl as ctrl">
+      <input ng-model="ctrl.model.currentDate"></input>
+      <input ng-model="ctrl.model.dateInNY"></input>
+    </div>
+  </body>
+  <script  type="text/javascript">
+    var app = angular.module('app', []);
+    app.controller('DateCtrl', [function() {
+      this.model = {};
+      Object.defineProperty(this.model, 'currentDate', {
+        get: function() {
+          return moment(new Date()).format('HH');
+        }
+      });
+      Object.defineProperty(this.model, 'dateInNY', {
+        get: function() {
+          return moment(new Date()).tz('America/New_York').format('HH');
+        }
+      });
+    }]);
+
+  </script>
+</html>
