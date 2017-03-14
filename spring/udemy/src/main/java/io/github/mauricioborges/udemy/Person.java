@@ -2,6 +2,9 @@ package io.github.mauricioborges.udemy;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 public class Person {
     @Override
@@ -9,7 +12,14 @@ public class Person {
         return "Person{}";
     }
 
+    @PostConstruct
     public void speak() {
-        System.out.print("Hello there");
+        System.out.println("Hello there, I've been constructed");
+    }
+
+
+    @PreDestroy
+    public void die() {
+        System.out.println("I'm your father");
     }
 }

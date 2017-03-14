@@ -1,10 +1,9 @@
 package io.github.mauricioborges.udemy;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.junit.Assert.assertEquals;
@@ -12,11 +11,17 @@ import static org.junit.Assert.assertNotEquals;
 
 public class ApplicationContextThroughClassPlaygroundTest {
 
-    private ApplicationContext context;
+    private AnnotationConfigApplicationContext context;
 
     @Before
     public void setUp() throws Exception {
         context = new AnnotationConfigApplicationContext(AppConfig.class);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        context.close();
+
     }
 
     @Test

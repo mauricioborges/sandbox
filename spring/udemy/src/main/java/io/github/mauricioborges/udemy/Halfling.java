@@ -1,5 +1,8 @@
 package io.github.mauricioborges.udemy;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Halfling {
 
     private String name;
@@ -28,10 +31,15 @@ public class Halfling {
         this.age = age;
     }
 
+    @PostConstruct
     public void speak() {
         System.out.println("I'm a halfling");
     }
 
+    @PreDestroy
+    public void die() {
+        System.out.println("my precious!!!");
+    }
     @Override
     public String toString() {
         return "Halfling{" +
