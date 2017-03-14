@@ -11,6 +11,9 @@ import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_PROT
 @ComponentScan
 public class AppConfig {
 
+    public static final String ALONE_HALFLING = "alone_halfling";
+    public static final String HALFLING = "halfling";
+
     @Bean(name="halfling")
     @Scope(value = SCOPE_PROTOTYPE)
     public Halfling getHalfling() {

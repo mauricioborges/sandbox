@@ -33,12 +33,12 @@ public class ApplicationContextPlaygroundTest {
 
     @Test
     public void itCanAlsoNotUseComponentAndUseMethod() throws Exception {
-        assertEquals(context.getBean("alone_halfling"), context.getBean("alone_halfling"));
+        assertEquals(context.getBean(AppConfig.ALONE_HALFLING), context.getBean(AppConfig.ALONE_HALFLING));
     }
 
     @Test
     public void byDefaultItUsesSingletonButYouCanChange() throws Exception {
-        assertNotEquals(context.getBean("halfling"), context.getBean("halfling"));
+        assertNotEquals(context.getBean(AppConfig.HALFLING), context.getBean(AppConfig.HALFLING));
 
     }
 }
