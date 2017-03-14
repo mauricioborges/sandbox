@@ -11,7 +11,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-public class ApplicationContextPlaygroundTest {
+public class ApplicationContextThroughClassPlaygroundTest {
 
     private ApplicationContext context;
 
