@@ -2,6 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="io.github.mauricioborges.udemy.Halfling" name="singleton_halfling" scope="singleton"/>
-    <bean class="io.github.mauricioborges.udemy.Halfling" name="halfing" scope="prototype"/>
+    <bean class="io.github.mauricioborges.udemy.Halfling" name="singleton_halfling" scope="singleton">
+        <constructor-arg name="name" value="Halflingzildo"/>
+        <constructor-arg name="age" value="100"/>
+    </bean>
+    <bean class="io.github.mauricioborges.udemy.Halfling" name="halfing" scope="prototype">
+        <constructor-arg name="name" value="Halflingzildo"/>
+        <constructor-arg name="age" value="100"/>
+    </bean>
 </beans>

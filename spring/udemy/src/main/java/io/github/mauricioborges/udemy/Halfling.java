@@ -1,16 +1,28 @@
 package io.github.mauricioborges.udemy;
 
 public class Halfling {
-    public void speak(){
+
+    private String name;
+
+
+    private Integer age;
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Halfling(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void speak() {
         System.out.println("I'm a halfling");
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
-    public String name(){
-        return "Halflingberg";
-    }
 }

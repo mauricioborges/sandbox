@@ -17,11 +17,11 @@ public class AppConfig {
     @Bean(name="halfling")
     @Scope(value = SCOPE_PROTOTYPE)
     public Halfling getHalfling() {
-        return new Halfling();
+        return new Halfling("Halflingberg", 123);
     }
 
     @Bean(name="alone_halfling")
     public Halfling getAloneHalfling() {
-        return new Halfling();
+        return new Halfling("Halflingberg", 125);
     }
 }
