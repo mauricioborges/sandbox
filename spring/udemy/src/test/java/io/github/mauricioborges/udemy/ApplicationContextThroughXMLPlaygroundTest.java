@@ -1,6 +1,5 @@
 package io.github.mauricioborges.udemy;
 
-import javafx.application.Application;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
