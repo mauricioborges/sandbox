@@ -19,6 +19,18 @@ public class ApplicationContextThroughClassPlaygroundTest {
     }
 
     @Test()
+    public void itPrintsTheAloneHalfing() throws Exception {
+        assertEquals(context.getBean(AppConfig.ALONE_HALFLING).toString(), "Halfling{name='Halflingberg', age=125, ownedPerson=Person{}}");
+
+    }
+
+    @Test()
+    public void itPrintsTheHalfing() throws Exception {
+        assertEquals(context.getBean(AppConfig.HALFLING).toString(), "Halfling{name='Halflingberg', age=123, ownedPerson=Person{}}");
+
+    }
+
+    @Test()
     public void itDoesntAlwaysReturnTheSameObjectWhenUsingComponent() throws Exception {
         assertEquals(context.getBean(Person.class), context.getBean(Person.class));
 

@@ -17,11 +17,16 @@ public class AppConfig {
     @Bean(name="halfling")
     @Scope(value = SCOPE_PROTOTYPE)
     public Halfling getHalfling() {
-        return new Halfling("Halflingberg", 123);
+        Halfling halfing = new Halfling("Halflingberg", 123);
+        halfing.setOwnedPerson(new Person());
+        return halfing;
+
     }
 
     @Bean(name="alone_halfling")
     public Halfling getAloneHalfling() {
-        return new Halfling("Halflingberg", 125);
+        Halfling halfling = new Halfling("Halflingberg", 125);
+        halfling.setOwnedPerson(new Person());
+        return halfling;
     }
 }
