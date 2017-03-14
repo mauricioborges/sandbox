@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="io.github.mauricioborges.udemy.Halfling" name="singleton_halfling" scope="singleton">
+    <!--interesting: destroy methods only work for singletons due to lifecycle (http://docs.spring.io/spring/docs/3.1.x/spring-framework-reference/html/beans.html#beans-factory-scopes-prototype section 4.5.2) -->
+    <bean class="io.github.mauricioborges.udemy.Halfling" name="singleton_halfling" scope="singleton"  destroy-method="die" init-method="speak">
         <constructor-arg name="name" value="Halflingzildo"/>
         <constructor-arg name="age" value="100"/>
     </bean>
