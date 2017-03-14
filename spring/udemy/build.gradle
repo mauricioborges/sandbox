@@ -1,12 +1,18 @@
-apply plugin: 'java-application'
+apply plugin: 'java'
+apply plugin: 'application'
 
 repositories {
     jcenter()
 }
 
+def SPRING_VERSION='4.3.7.RELEASE'
+
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
-    compile 'org.springframework:spring:4.3.7'
+    compile "org.springframework:spring-core:$SPRING_VERSION"
+    compile "org.springframework:spring-context:$SPRING_VERSION"
     testCompile 'junit:junit:4.12'
 }
-*/
+
+
+mainClassName = 'io.github.mauricioborges.udemy.App'
