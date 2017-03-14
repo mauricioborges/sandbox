@@ -16,8 +16,8 @@ public class ApplicationContextPlaygroundTest {
         context = new AnnotationConfigApplicationContext(AppConfig.class);
     }
 
-    @Test
-    public void itDoesntAlwaysReturnTheSameObject() throws Exception {
+    @Test()
+    public void itDoesntAlwaysReturnTheSameObjectWhenUsingComponent() throws Exception {
         assertEquals(context.getBean(Person.class), context.getBean(Person.class));
 
     }
