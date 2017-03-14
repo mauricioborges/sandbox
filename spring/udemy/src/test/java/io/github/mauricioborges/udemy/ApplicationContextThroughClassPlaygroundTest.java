@@ -2,6 +2,7 @@ package io.github.mauricioborges.udemy;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,22 +19,21 @@ public class ApplicationContextThroughClassPlaygroundTest {
         context = new AnnotationConfigApplicationContext(AppConfig.class);
     }
 
-    @Test()
+    @Test
     public void itPrintsTheAloneHalfing() throws Exception {
         assertEquals(context.getBean(AppConfig.ALONE_HALFLING).toString(), "Halfling{name='Halflingberg', age=125, ownedPerson=Person{}}");
 
     }
 
-    @Test()
+    @Test
     public void itPrintsTheHalfing() throws Exception {
         assertEquals(context.getBean(AppConfig.HALFLING).toString(), "Halfling{name='Halflingberg', age=123, ownedPerson=Person{}}");
 
     }
 
-    @Test()
+    @Test
     public void itDoesntAlwaysReturnTheSameObjectWhenUsingComponent() throws Exception {
         assertEquals(context.getBean(Person.class), context.getBean(Person.class));
-
     }
 
     @Test(expected = NoUniqueBeanDefinitionException.class)

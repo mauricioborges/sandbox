@@ -6,8 +6,15 @@
         <constructor-arg name="name" value="Halflingzildo"/>
         <constructor-arg name="age" value="100"/>
     </bean>
-    <bean class="io.github.mauricioborges.udemy.Halfling" name="halfing" scope="prototype">
+    <bean class="io.github.mauricioborges.udemy.Halfling" name="halfling" scope="prototype">
         <constructor-arg name="name" value="Halflingzildo"/>
         <constructor-arg name="age" value="100"/>
+        <property name="ownedPerson" value="invalidValue"></property>
     </bean>
+    <bean class="io.github.mauricioborges.udemy.Halfling" name="halflingthatworks" scope="prototype">
+        <constructor-arg name="name" value="Halflingzildo"/>
+        <constructor-arg name="age" value="100"/>
+        <property name="ownedPerson" ref="personCreator"></property>
+    </bean>
+    <bean class="io.github.mauricioborges.udemy.Person" name="personCreator" scope="prototype"/>
 </beans>
