@@ -1,0 +1,3 @@
+homeController:
+  aaaa: oi gente
+  msg: "hey now hey now ${homeController.aaaa}"
