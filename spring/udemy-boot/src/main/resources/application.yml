@@ -1,3 +1,11 @@
 homeController:
-  dev-name: "Mauricio Borges Silva"
-  app-name: "${homeController.dev-name} learning springBoot"
+  dev-name: mauricio
+  app-name: dinossauro em dev
+  msg: "frango frito"
+spring:
+  profiles: development
+---
+homeController:
+  msg: "frango frito em produção"
+spring:
+  profiles: production
