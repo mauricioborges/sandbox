@@ -9,3 +9,5 @@ homeController:
   msg: "frango frito em produção"
 spring:
   profiles: production
+  thymeleaf:
+    cache: false
