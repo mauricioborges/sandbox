@@ -1,3 +1,3 @@
 homeController:
-  aaaa: oi gente
-  msg: "hey now hey now ${homeController.aaaa}"
+  dev-name: "Mauricio Borges Silva"
+  app-name: "${homeController.dev-name} learning springBoot"

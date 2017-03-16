@@ -2,6 +2,7 @@ package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -12,9 +13,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
-		String[] names = ctx.getBeanDefinitionNames();
-		for (String name: names) {
-			System.out.println(name);
-		}
+		MyAppConfig config = (MyAppConfig) ctx.getBean("myAppConfig");
+		System.out.println(config.toString());
 	}
 }
