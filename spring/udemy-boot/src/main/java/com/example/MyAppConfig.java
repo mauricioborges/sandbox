@@ -1,11 +1,10 @@
 package com.example;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix= "homeController")
+@ConfigurationProperties(prefix = "homeController")
 public class MyAppConfig {
 
     private String devName;
