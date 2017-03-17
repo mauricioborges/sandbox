@@ -17,4 +17,12 @@ public class HomeController {
         return homeControllerMsg;
     }
 
+    @RequestMapping("/failplease")
+    public String failPlease() throws Exception {
+        if (1 == 1) {
+            throw new Exception("lolololool");
+        }
+        return "failme please";
+    }
+
 }
