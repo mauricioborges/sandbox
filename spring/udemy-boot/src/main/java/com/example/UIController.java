@@ -1,8 +1,6 @@
 package com.example;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -22,10 +20,4 @@ public class UIController {
         return "index";
     }
 
-    @ExceptionHandler
-    public String exceptionHandler(Exception exception, Model model) {
-        model.addAttribute("errorMessage", exception.getMessage());
-        return "error";
-
-    }
 }

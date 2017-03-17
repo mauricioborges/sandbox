@@ -4,6 +4,10 @@ public class NotificationService {
 
     private final String notificationPrefix;
 
+    public NotificationService(String notificationPrefix) {
+        this.notificationPrefix = notificationPrefix;
+    }
+
     public void send() {
 
     }
@@ -13,9 +17,5 @@ public class NotificationService {
         return "NotificationService{" +
                 "notificationPrefix='" + notificationPrefix + '\'' +
                 '}';
-    }
-
-    public NotificationService(String notificationPrefix) {
-        this.notificationPrefix = notificationPrefix;
     }
 }
