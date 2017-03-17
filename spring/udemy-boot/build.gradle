@@ -28,5 +28,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-devtools')
     compile('org.springframework.boot:spring-boot-configuration-processor')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
