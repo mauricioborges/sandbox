@@ -78,7 +78,7 @@ import { OnInit } from '@angular/core';
     };
 
     getHeroes(): void {
-      this.heroes = this.heroService.getHeroes();
+      this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
     };
 
     onSelect(hero: Hero): void {
