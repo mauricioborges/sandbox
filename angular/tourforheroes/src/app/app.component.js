@@ -19,7 +19,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>{{hero.name}} details!</h2>\n    <div><label>id: </label>{{hero.id}}</div>\n    <div>\n      <label>name: </label>\n      <input value=\"{{hero.name}}\" placeholder=\"hero name\"/>\n    </div>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <h2>{{hero.name}} details!</h2>\n    <div><label>id: </label>{{hero.id}}</div>\n    <div>\n      <label>name: </label>\n      <input [(ngModel)]=\"hero.name\" placeholder=\"hero name\"/>\n    </div>\n  ",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -32,7 +32,4 @@ var Hero = (function () {
     return Hero;
 }());
 exports.Hero = Hero;
-hero: Hero = { id: 1,
-    name: 'WindStorm'
-};
 //# sourceMappingURL=app.component.js.map
