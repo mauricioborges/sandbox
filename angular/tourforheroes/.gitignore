@@ -29,8 +29,10 @@ node_modules/
 
 
 #Exclude tsc generated files
-js/*.map
-js/ts.js
+src/app/*.map
+src/app/ts.js
+src/app/ts.js
+src/app/*.js
 node_modules/
 built/*
 tests/cases/rwc/*
@@ -99,3 +101,14 @@ node_modules/
 #Exclude tsc generated files
 js/*.map
 js/ts.js
+# Visual Studio 2015 cache/options directory
+.vs/
+bower_components/
+node_modules/
+
+
+#Exclude tsc generated files
+js/*.map
+js/ts.js
+src/main.js
+src/main*map
