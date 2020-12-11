@@ -1,5 +1,3 @@
-
-
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -19,6 +17,24 @@ spec:
                 port:
                   number: 8080
           - path: /v2
+            pathType: Prefix
+            backend:
+              service:
+                name: web2
+                port:
+                  number: 8080
+
+    - host: hello-world.gabriela
+      http:
+        paths:
+          - path: /gabriela
+            pathType: Prefix
+            backend:
+              service:
+                name: web
+                port:
+                  number: 8080
+          - path: /gabriela/v2
             pathType: Prefix
             backend:
               service:

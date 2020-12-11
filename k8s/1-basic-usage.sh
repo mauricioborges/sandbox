@@ -1,3 +1,4 @@
+echo -e "Prints diagnostic info"
 kubectl get pods -n kube-system -l app.kubernetes.io/name=ingress-nginx
 POD_NAMESPACE=kube-system
 POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx --field-selector=status.phase=Running -o jsonpath='{.items[0].metadata.name}')
