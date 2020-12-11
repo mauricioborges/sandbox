@@ -11,3 +11,11 @@ kubectl create deployment web --image=gcr.io/google-samples/hello-app:1.0
  minikube service web --url
 
 kubectl apply -f  example-ingress.yaml
+
+echo "add the following entries to your /etc/hosts"
+echo "$(minikube ip) hello-world.mauricio"
+echo "$(minikube ip) hello-world.gabriela"
+
+echo "try curl hello-world.mauricio"
+echo "try curl hello-world.gabriela/gabriela"
+
